@@ -2,11 +2,12 @@ import React, { useState } from 'react'
 import TitleBar from './components/TitleBar';
 import './App.css'
 import BookViewer from './components/BookViewer';
+import BookCreator from './components/BookCreator';
 
 export default function App() {
   const [bookNumber, setBookNumber] = useState(0)
 
-  const books = [
+  let books = [
     {title: 'Ready Player One', author: 'Ernest Cline'},
     {title: 'All The Light We Cannot See', author: 'Anthony Doerr'},
     {title: 'The First and Last Freedome', author: 'jiddy Krishnamurit'}
@@ -30,6 +31,14 @@ export default function App() {
     setBookNumber(tempBookNumber)
   }
 
+  const createBook = (newBook) => {
+    console.log('createBook from App', newBook)
+    books.push(newBook)
+    console.log(books)
+    // setBookNumber(books.length - 1)
+    // console.log(bookNumber)
+  }
+
   return (
     <div className='container-fluid'>
       <TitleBar />
@@ -37,7 +46,9 @@ export default function App() {
         book={books[bookNumber]} 
         nextBook={goToNextBook}
         previousBook={goToPreviousBook}
-        />
+      />
+      <BookCreator createNewBook={createBook} />
+
     </div>
   );
 }
