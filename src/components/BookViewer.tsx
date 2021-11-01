@@ -1,7 +1,10 @@
 import React from 'react'
 import Book from './Book'
 
-export default function BookViewer(props) {
+export default function BookViewer(
+  props: { previousBook: () => void; 
+    book: { title: string; author: string }; 
+    nextBook: () => void }) {
 
   return (
       <div className='row row-spacer'>
