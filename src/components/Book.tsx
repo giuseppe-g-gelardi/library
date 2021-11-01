@@ -2,7 +2,8 @@ import React from 'react'
 import './styles/Book.css'
 
 export default function Book(
-  props: { book: { title: string; author: string } }) {
+  props: { book: { title: string; author: string } }
+  ) {
 
   return (
     <div className='book'>
