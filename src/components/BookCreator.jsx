@@ -7,9 +7,7 @@ export default function BookCreator(props) {
   const submit = (e) => {
     e.preventDefault()
     props.createNewBook({title, author})
-    // props.createNewBook({title: title, author: author})
   }
-
 
   return (
     <form onSubmit={submit}>
