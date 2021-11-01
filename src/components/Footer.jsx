@@ -6,7 +6,5 @@ export default function Footer() {
     <footer className='footer'>
       <h4>Copyright &copy; 2021</h4>
     </footer>
-
   )
-
 }

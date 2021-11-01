@@ -3,13 +3,14 @@ import TitleBar from './components/TitleBar';
 import './App.css'
 import BookViewer from './components/BookViewer';
 import BookCreator from './components/BookCreator';
+import Footer from './components/Footer';
 
 export default function App() {
   const [bookNumber, setBookNumber] = useState(0)
   const [books, setBooks] = useState([
     {title: 'Ready Player One', author: 'Ernest Cline'},
     {title: 'All The Light We Cannot See', author: 'Anthony Doerr'},
-    {title: 'The First and Last Freedome', author: 'jiddy Krishnamurit'}
+    {title: 'The First and Last Freedome', author: 'Jiddy Krishnamurit'}
   ])
 
   const goToNextBook = () => {
@@ -44,7 +45,7 @@ export default function App() {
         previousBook={goToPreviousBook}
       />
       <BookCreator  createNewBook={createBook} />
-
+      <Footer />
     </div>
   );
 }
