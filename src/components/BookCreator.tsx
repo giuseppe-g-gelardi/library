@@ -1,10 +1,14 @@
-import React, { useState } from 'react'
+import React, { useState, SyntheticEvent } from 'react'
 
-export default function BookCreator(props) {
+export default function BookCreator(
+  props: { createNewBook: 
+    (args: { title: string; author: string }) => void }
+  ) {
+    
   const [title, setTitle] = useState('')
   const [author, setAuthor] = useState('')
 
-  const submit = (e) => {
+  const submit = (e: SyntheticEvent) => {
     e.preventDefault()
     props.createNewBook({title, author})
   }

@@ -30,7 +30,7 @@ export default function App() {
     setBookNumber(tempBookNumber)
   }
 
-  const createBook = (newBook) => {
+  const createBook = (newBook: {title: string, author: string}) => {
     setBooks([...books, newBook])
     setBookNumber(books.length)
   }
